@@ -1,0 +1,8 @@
+<form class="navbar-form navbar-right" role="language">
+  <div class="form-group">
+    <select class="form-control" name="type" onchange="window.location.replace('{% url 'setlanguage' %}?lang='+this.options[this.selectedIndex].value+'&url='+location.href)">
+      <option {% if LANGUAGE_CODE == "en" %}selected {% endif %}value="en">EN</option>
+      <option {% if LANGUAGE_CODE == "fr" %}selected {% endif %}value="fr">FR</option>
+    </select>
+  </div>
+</form>
