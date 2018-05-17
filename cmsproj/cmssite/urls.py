@@ -8,6 +8,7 @@ from django.views.i18n import set_language
 from mezzanine.core.views import direct_to_template
 from mezzanine.conf import settings
 
+import frlflat.views   # @lamontfr
 
 admin.autodiscover()
 
@@ -97,6 +98,13 @@ urlpatterns += [
 
 ]
 
+urlpatterns += [
+    url(
+        r'^setlanguage$',
+        frlflat.views.SetLanguage.as_view(),
+        name='setlanguage'
+    ),
+]
 
 
 
